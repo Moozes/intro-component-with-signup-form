@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root {
+    /* primary */
+    --red : hsl(0, 100%, 74%) ;
+    --green : hsl(154, 59%, 51%);
+    /* accent */
+    --blue : hsl(248, 32%, 49%);
+    /* neutral */
+    --dark-blue : hsl(249, 10%, 26%) ;
+    --grayish-blue : hsl(246, 25%, 77%);
+
+    --font-size : 16px;
+
+    --input-padding : 10px;
+    --btn-padding : 15px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display : flex;
+    align-items: center;
+    justify-content: center;/* <-----------aaa knew trick */
+    min-height: 100vh;
+    gap: 20px;/* <-----------aaa knew trick */
+    background: var(--red) url('images/bg-intro-desktop.png') no-repeat center center/cover;
+}
+
+body > div {
+    flex-basis: 35%; /* <-----------aaa knew trick */
+}
+
+.left {
+    color : white;
+}
+
+.left .title:nth-of-type(2) {
+    margin-bottom: 30px;
+    line-height: 30px;
+}
+
+.left .paragraph {
+    color : white;
+}
+
+
+.right .btn.btn-blue {
+    margin-bottom: 20px;
+    box-shadow: 0 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.right .card{
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.right form {
+    width : 100%;
+    margin-bottom: 10px;
+    /* position: relative; */
+}
+
+.right form .input-group {
+    width : 100%;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.right form .input-group input {
+    width : 100%;
+    padding : var(--input-padding);
+    color : var(--dark-blue);
+    border: 1px solid var(--grayish-blue);
+}
+
+.right form .input-group input::placeholder {
+    font-weight: 700;
+}
+
+.right form .input-group input:focus {
+    border: 1px solid var(--grayish-blue);
+    outline: 1px solid var(--dark-blue);
+}
+
+.right form .input-group .error-message {
+    position: absolute;
+    top : 40px;
+    right : 0;
+}
+
+.right form .input-group .error-icon {
+    width: 18px;
+    position: absolute;
+    top : 15%;
+    right : 5%;
+}
+
+.right form input[type=submit] {
+    width : 100%;
+    border-width : 1px;
+    border-style: none;/* removes that stupid porder shadow-like effect */
+}
+
+.right .right-footer {
+    text-align: center;
+}
+
+.right .right-footer a{
+    text-decoration: none;
+}
+
+
+/* utitlity classes */
+.btn {
+    padding : var(--btn-padding);
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-blue {
+    background: var(--blue);
+    color: white;
+}
+.btn-green {
+    background: var(--green);
+    color : white;
+}
+.grayish-blue {
+    color : var(--grayish-blue);
+}
+.red {
+    color : var(--red);
+}
+.font-small {
+    font-size: 11px;
+}
+.font-medium {
+    font-size: 14px;
+}
+.font-big {
+    font-size: 40px;
+}
+.font400 {
+    font-weight: 400;
+}
+.font500 {
+    font-weight: 500;
+}
+.font600 {
+    font-weight: 600;
+}
+.font700 {
+    font-weight: 700;
+}
+.error-message {
+    color : var(--red);
+    display: none;
+    /* visibility: hidden; */
+}
+.error-message.activate {
+    display: inline;
+    /* visibility: visible; */
+}
+.error-icon {
+    display: none;
+    /* visibility: hidden; */
+}
+.error-icon.activate {
+    display: inline;
+    /* visibility: visible; */
+}
+
+
+@media(max-width : 375px) {
+    body {
+        flex-direction: column;
+        padding-top : 70px;
+        padding-bottom : 50px;
+    }
+
+    .left {
+        text-align: center;
+        width : 90%;
+        margin : auto;
+    }
+
+    .right {
+        width : 90%;
+        margin : auto;
+    }
+
+    .right .card {
+        padding : 20px
+    }
+
+    .font-small {
+        font-size: 9px;
+    }
+    .font-medium {
+        font-size: 11px;
+    }
+    .font-big {
+        font-size: 25px;
+    }
+}
